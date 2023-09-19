@@ -1,4 +1,5 @@
 #include "main.h"
+#include <ctype.h>
 
 #define F_MINUS 1
 #define F_PLUS 2
@@ -55,7 +56,7 @@ int _print_precision(const char *format, int *index, va_list args)
 	precision = 0;
 	for (currIndex += 1; format[currIndex] != '\0'; currIndex++)
 	{
-		if (is_digit(format[currIndex]))
+		if (isdigit(format[currIndex]))
 		{
 			precision *= 10;
 			precision += format[currIndex] - '0';
@@ -113,7 +114,7 @@ int _print_width(const char *format, int *index, va_list args)
 
 	for (currIndex = *index + 1; format[currIndex] != '\0'; currIndex++)
 	{
-		if (is_digit(format[currIndex]))
+		if (isdigit(format[currIndex]))
 		{
 			width *= 10;
 			width += format[currIndex] - '0';
