@@ -31,5 +31,9 @@ int _print_caps_hexadecimal_short(va_list args);
 int _print_caps_hexadecimal_recursive_short(unsigned short num);
 int _print_hexadecimal_recursive(unsigned long int num);
 int _print_pointer(void *ptr);
+int _print_width(const char *format, int *index, va_list args);
+int _print_size(const char *format, int *index);
+int _print_precision(const char *format, int *index, va_list args);
+int _print_flags(const char *format, int *index);
 
 #endif /* MAIN_H */
