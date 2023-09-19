@@ -1,1 +1,119 @@
-{"payload":{"allShortcutsEnabled":false,"fileTree":{"":{"items":[{"name":"README.md","path":"README.md","contentType":"file"},{"name":"_print_binary.c","path":"_print_binary.c","contentType":"file"},{"name":"_print_caps_hexa_l_h.c","path":"_print_caps_hexa_l_h.c","contentType":"file"},{"name":"_print_caps_hexadecimal.c","path":"_print_caps_hexadecimal.c","contentType":"file"},{"name":"_print_hexadecimal.c","path":"_print_hexadecimal.c","contentType":"file"},{"name":"_print_hexadecimal_long.c","path":"_print_hexadecimal_long.c","contentType":"file"},{"name":"_print_hexadecimal_short.c","path":"_print_hexadecimal_short.c","contentType":"file"},{"name":"_print_long.c","path":"_print_long.c","contentType":"file"},{"name":"_print_number.c","path":"_print_number.c","contentType":"file"},{"name":"_print_octal.c","path":"_print_octal.c","contentType":"file"},{"name":"_print_octal_long.c","path":"_print_octal_long.c","contentType":"file"},{"name":"_print_octal_short.c","path":"_print_octal_short.c","contentType":"file"},{"name":"_print_pointer.c","path":"_print_pointer.c","contentType":"file"},{"name":"_print_reversed_string.c","path":"_print_reversed_string.c","contentType":"file"},{"name":"_print_rot13.c","path":"_print_rot13.c","contentType":"file"},{"name":"_print_short.c","path":"_print_short.c","contentType":"file"},{"name":"_print_string.c","path":"_print_string.c","contentType":"file"},{"name":"_print_unsigned_integer.c","path":"_print_unsigned_integer.c","contentType":"file"},{"name":"_print_unsigned_long.c","path":"_print_unsigned_long.c","contentType":"file"},{"name":"_print_unsigned_short.c","path":"_print_unsigned_short.c","contentType":"file"},{"name":"_printf.c","path":"_printf.c","contentType":"file"},{"name":"_putchar.c","path":"_putchar.c","contentType":"file"},{"name":"a.out","path":"a.out","contentType":"file"},{"name":"main.c","path":"main.c","contentType":"file"},{"name":"main.h","path":"main.h","contentType":"file"}],"totalCount":25}},"fileTreeProcessingTime":3.303344,"foldersToFetch":[],"reducedMotionEnabled":null,"repo":{"id":691916219,"defaultBranch":"main","name":"test_printf","ownerLogin":"paschalugwu","currentUserCanPush":false,"isFork":false,"isEmpty":false,"createdAt":"2023-09-15T06:56:39.000Z","ownerAvatar":"https://avatars.githubusercontent.com/u/106428248?v=4","public":true,"private":false,"isOrgOwned":false},"symbolsExpanded":false,"treeExpanded":true,"refInfo":{"name":"main","listCacheKey":"v0:1694761000.888486","canEdit":false,"refType":"branch","currentOid":"b9ad01a79fe38b948efebfb4dbb43ad3740fd506"},"path":"_print_caps_hexa_l_h.c","currentUser":null,"blob":{"rawLines":["#include <stdarg.h>","#include <stdio.h>","#include \"main.h\"","","/**"," * _print_caps_hexadecimal_long - Prints a long hexadecimal number in uppercase"," * @args: Arguments list containing the long hexadecimal number to print"," *"," * Return: Number of characters printed"," */","int _print_caps_hexadecimal_long(va_list args)","{","\tunsigned long num = va_arg(args, unsigned long);","\tint count = 0;","","\tif (num == 0)","\t{","\t\t_putchar('0');","\t\tcount++;","\t}","\telse","\t{","\t\tcount += _print_caps_hexadecimal_recursive_long(num);","\t}","","\treturn (count);","}","","/**"," * _print_caps_hexadecimal_recursive_long - Recursive function"," * @num: The number to print"," *"," * Return: Number of characters printed"," */","int _print_caps_hexadecimal_recursive_long(unsigned long num)","{","\tint count = 0;","\tint remainder;","","\tif (num == 0)","\t{","\t\treturn (count);","\t}","","\tcount += _print_caps_hexadecimal_recursive_long(num / 16);","","\tremainder = num % 16;","","\tif (remainder < 10)","\t{","\t\t_putchar(remainder + '0');","\t}","\telse","\t{","\t\t_putchar(remainder - 10 + 'A');","\t}","","\tcount++;","","\treturn (count);","}","","/**"," * _print_caps_hexadecimal_short - Prints a short hexadecimal number in upper"," * @args: Arguments list containing the short hexadecimal number to print"," *"," * Return: Number of characters printed"," */","int _print_caps_hexadecimal_short(va_list args)","{","\tunsigned short num = (unsigned short)va_arg(args, unsigned int);","\tint count = 0;","","\tif (num == 0)","\t{","\t\t_putchar('0');","\t\tcount++;","\t}","\telse","\t{","\t\tcount += _print_caps_hexadecimal_recursive_short(num);","\t}","","\treturn (count);","}","","/**"," * _print_caps_hexadecimal_recursive_short - Recursive function"," * @num: The number to print"," *"," * Return: Number of characters printed"," */","int _print_caps_hexadecimal_recursive_short(unsigned short num)","{","\tint count = 0;","\tint remainder;","","\tif (num == 0)","\t{","\t\treturn (count);","\t}","","\tcount += _print_caps_hexadecimal_recursive_short(num / 16);","","\tremainder = num % 16;","","\tif (remainder < 10)","\t{","\t\t_putchar(remainder + '0');","\t}","\telse","\t{","\t\t_putchar(remainder - 10 + 'A');","\t}","","\tcount++;","","\treturn (count);","}"],"stylingDirectives":[[{"start":0,"end":8,"cssClass":"pl-k"},{"start":9,"end":19,"cssClass":"pl-s"}],[{"start":0,"end":8,"cssClass":"pl-k"},{"start":9,"end":18,"cssClass":"pl-s"}],[{"start":0,"end":8,"cssClass":"pl-k"},{"start":9,"end":17,"cssClass":"pl-s"}],[],[{"start":0,"end":3,"cssClass":"pl-c"}],[{"start":0,"end":79,"cssClass":"pl-c"}],[{"start":0,"end":72,"cssClass":"pl-c"}],[{"start":0,"end":2,"cssClass":"pl-c"}],[{"start":0,"end":39,"cssClass":"pl-c"}],[{"start":0,"end":3,"cssClass":"pl-c"}],[{"start":0,"end":3,"cssClass":"pl-smi"},{"start":4,"end":32,"cssClass":"pl-en"},{"start":33,"end":40,"cssClass":"pl-smi"},{"start":41,"end":45,"cssClass":"pl-s1"}],[],[{"start":1,"end":14,"cssClass":"pl-smi"},{"start":15,"end":18,"cssClass":"pl-s1"},{"start":19,"end":20,"cssClass":"pl-c1"},{"start":21,"end":27,"cssClass":"pl-en"},{"start":28,"end":32,"cssClass":"pl-s1"},{"start":34,"end":42,"cssClass":"pl-s1"},{"start":43,"end":47,"cssClass":"pl-s1"}],[{"start":1,"end":4,"cssClass":"pl-smi"},{"start":5,"end":10,"cssClass":"pl-s1"},{"start":11,"end":12,"cssClass":"pl-c1"},{"start":13,"end":14,"cssClass":"pl-c1"}],[],[{"start":1,"end":3,"cssClass":"pl-k"},{"start":5,"end":8,"cssClass":"pl-s1"},{"start":9,"end":11,"cssClass":"pl-c1"},{"start":12,"end":13,"cssClass":"pl-c1"}],[],[{"start":2,"end":10,"cssClass":"pl-en"},{"start":11,"end":14,"cssClass":"pl-c1"}],[{"start":2,"end":7,"cssClass":"pl-s1"},{"start":7,"end":9,"cssClass":"pl-c1"}],[],[{"start":1,"end":5,"cssClass":"pl-k"}],[],[{"start":2,"end":7,"cssClass":"pl-s1"},{"start":8,"end":10,"cssClass":"pl-c1"},{"start":11,"end":49,"cssClass":"pl-en"},{"start":50,"end":53,"cssClass":"pl-s1"}],[],[],[{"start":1,"end":7,"cssClass":"pl-k"},{"start":9,"end":14,"cssClass":"pl-s1"}],[],[],[{"start":0,"end":3,"cssClass":"pl-c"}],[{"start":0,"end":62,"cssClass":"pl-c"}],[{"start":0,"end":28,"cssClass":"pl-c"}],[{"start":0,"end":2,"cssClass":"pl-c"}],[{"start":0,"end":39,"cssClass":"pl-c"}],[{"start":0,"end":3,"cssClass":"pl-c"}],[{"start":0,"end":3,"cssClass":"pl-smi"},{"start":4,"end":42,"cssClass":"pl-en"},{"start":43,"end":56,"cssClass":"pl-smi"},{"start":57,"end":60,"cssClass":"pl-s1"}],[],[{"start":1,"end":4,"cssClass":"pl-smi"},{"start":5,"end":10,"cssClass":"pl-s1"},{"start":11,"end":12,"cssClass":"pl-c1"},{"start":13,"end":14,"cssClass":"pl-c1"}],[{"start":1,"end":4,"cssClass":"pl-smi"},{"start":5,"end":14,"cssClass":"pl-s1"}],[],[{"start":1,"end":3,"cssClass":"pl-k"},{"start":5,"end":8,"cssClass":"pl-s1"},{"start":9,"end":11,"cssClass":"pl-c1"},{"start":12,"end":13,"cssClass":"pl-c1"}],[],[{"start":2,"end":8,"cssClass":"pl-k"},{"start":10,"end":15,"cssClass":"pl-s1"}],[],[],[{"start":1,"end":6,"cssClass":"pl-s1"},{"start":7,"end":9,"cssClass":"pl-c1"},{"start":10,"end":48,"cssClass":"pl-en"},{"start":49,"end":52,"cssClass":"pl-s1"},{"start":55,"end":57,"cssClass":"pl-c1"}],[],[{"start":1,"end":10,"cssClass":"pl-s1"},{"start":11,"end":12,"cssClass":"pl-c1"},{"start":13,"end":16,"cssClass":"pl-s1"},{"start":19,"end":21,"cssClass":"pl-c1"}],[],[{"start":1,"end":3,"cssClass":"pl-k"},{"start":5,"end":14,"cssClass":"pl-s1"},{"start":15,"end":16,"cssClass":"pl-c1"},{"start":17,"end":19,"cssClass":"pl-c1"}],[],[{"start":2,"end":10,"cssClass":"pl-en"},{"start":11,"end":20,"cssClass":"pl-s1"},{"start":21,"end":22,"cssClass":"pl-c1"},{"start":23,"end":26,"cssClass":"pl-c1"}],[],[{"start":1,"end":5,"cssClass":"pl-k"}],[],[{"start":2,"end":10,"cssClass":"pl-en"},{"start":11,"end":20,"cssClass":"pl-s1"},{"start":21,"end":22,"cssClass":"pl-c1"},{"start":23,"end":25,"cssClass":"pl-c1"},{"start":26,"end":27,"cssClass":"pl-c1"},{"start":28,"end":31,"cssClass":"pl-c1"}],[],[],[{"start":1,"end":6,"cssClass":"pl-s1"},{"start":6,"end":8,"cssClass":"pl-c1"}],[],[{"start":1,"end":7,"cssClass":"pl-k"},{"start":9,"end":14,"cssClass":"pl-s1"}],[],[],[{"start":0,"end":3,"cssClass":"pl-c"}],[{"start":0,"end":77,"cssClass":"pl-c"}],[{"start":0,"end":73,"cssClass":"pl-c"}],[{"start":0,"end":2,"cssClass":"pl-c"}],[{"start":0,"end":39,"cssClass":"pl-c"}],[{"start":0,"end":3,"cssClass":"pl-c"}],[{"start":0,"end":3,"cssClass":"pl-smi"},{"start":4,"end":33,"cssClass":"pl-en"},{"start":34,"end":41,"cssClass":"pl-smi"},{"start":42,"end":46,"cssClass":"pl-s1"}],[],[{"start":1,"end":15,"cssClass":"pl-smi"},{"start":16,"end":19,"cssClass":"pl-s1"},{"start":20,"end":21,"cssClass":"pl-c1"},{"start":23,"end":37,"cssClass":"pl-smi"},{"start":38,"end":44,"cssClass":"pl-en"},{"start":45,"end":49,"cssClass":"pl-s1"},{"start":51,"end":59,"cssClass":"pl-s1"},{"start":60,"end":63,"cssClass":"pl-s1"}],[{"start":1,"end":4,"cssClass":"pl-smi"},{"start":5,"end":10,"cssClass":"pl-s1"},{"start":11,"end":12,"cssClass":"pl-c1"},{"start":13,"end":14,"cssClass":"pl-c1"}],[],[{"start":1,"end":3,"cssClass":"pl-k"},{"start":5,"end":8,"cssClass":"pl-s1"},{"start":9,"end":11,"cssClass":"pl-c1"},{"start":12,"end":13,"cssClass":"pl-c1"}],[],[{"start":2,"end":10,"cssClass":"pl-en"},{"start":11,"end":14,"cssClass":"pl-c1"}],[{"start":2,"end":7,"cssClass":"pl-s1"},{"start":7,"end":9,"cssClass":"pl-c1"}],[],[{"start":1,"end":5,"cssClass":"pl-k"}],[],[{"start":2,"end":7,"cssClass":"pl-s1"},{"start":8,"end":10,"cssClass":"pl-c1"},{"start":11,"end":50,"cssClass":"pl-en"},{"start":51,"end":54,"cssClass":"pl-s1"}],[],[],[{"start":1,"end":7,"cssClass":"pl-k"},{"start":9,"end":14,"cssClass":"pl-s1"}],[],[],[{"start":0,"end":3,"cssClass":"pl-c"}],[{"start":0,"end":63,"cssClass":"pl-c"}],[{"start":0,"end":28,"cssClass":"pl-c"}],[{"start":0,"end":2,"cssClass":"pl-c"}],[{"start":0,"end":39,"cssClass":"pl-c"}],[{"start":0,"end":3,"cssClass":"pl-c"}],[{"start":0,"end":3,"cssClass":"pl-smi"},{"start":4,"end":43,"cssClass":"pl-en"},{"start":44,"end":58,"cssClass":"pl-smi"},{"start":59,"end":62,"cssClass":"pl-s1"}],[],[{"start":1,"end":4,"cssClass":"pl-smi"},{"start":5,"end":10,"cssClass":"pl-s1"},{"start":11,"end":12,"cssClass":"pl-c1"},{"start":13,"end":14,"cssClass":"pl-c1"}],[{"start":1,"end":4,"cssClass":"pl-smi"},{"start":5,"end":14,"cssClass":"pl-s1"}],[],[{"start":1,"end":3,"cssClass":"pl-k"},{"start":5,"end":8,"cssClass":"pl-s1"},{"start":9,"end":11,"cssClass":"pl-c1"},{"start":12,"end":13,"cssClass":"pl-c1"}],[],[{"start":2,"end":8,"cssClass":"pl-k"},{"start":10,"end":15,"cssClass":"pl-s1"}],[],[],[{"start":1,"end":6,"cssClass":"pl-s1"},{"start":7,"end":9,"cssClass":"pl-c1"},{"start":10,"end":49,"cssClass":"pl-en"},{"start":50,"end":53,"cssClass":"pl-s1"},{"start":56,"end":58,"cssClass":"pl-c1"}],[],[{"start":1,"end":10,"cssClass":"pl-s1"},{"start":11,"end":12,"cssClass":"pl-c1"},{"start":13,"end":16,"cssClass":"pl-s1"},{"start":19,"end":21,"cssClass":"pl-c1"}],[],[{"start":1,"end":3,"cssClass":"pl-k"},{"start":5,"end":14,"cssClass":"pl-s1"},{"start":15,"end":16,"cssClass":"pl-c1"},{"start":17,"end":19,"cssClass":"pl-c1"}],[],[{"start":2,"end":10,"cssClass":"pl-en"},{"start":11,"end":20,"cssClass":"pl-s1"},{"start":21,"end":22,"cssClass":"pl-c1"},{"start":23,"end":26,"cssClass":"pl-c1"}],[],[{"start":1,"end":5,"cssClass":"pl-k"}],[],[{"start":2,"end":10,"cssClass":"pl-en"},{"start":11,"end":20,"cssClass":"pl-s1"},{"start":21,"end":22,"cssClass":"pl-c1"},{"start":23,"end":25,"cssClass":"pl-c1"},{"start":26,"end":27,"cssClass":"pl-c1"},{"start":28,"end":31,"cssClass":"pl-c1"}],[],[],[{"start":1,"end":6,"cssClass":"pl-s1"},{"start":6,"end":8,"cssClass":"pl-c1"}],[],[{"start":1,"end":7,"cssClass":"pl-k"},{"start":9,"end":14,"cssClass":"pl-s1"}],[]],"csv":null,"csvError":null,"dependabotInfo":{"showConfigurationBanner":false,"configFilePath":null,"networkDependabotPath":"/paschalugwu/test_printf/network/updates","dismissConfigurationNoticePath":"/settings/dismiss-notice/dependabot_configuration_notice","configurationNoticeDismissed":null,"repoAlertsPath":"/paschalugwu/test_printf/security/dependabot","repoSecurityAndAnalysisPath":"/paschalugwu/test_printf/settings/security_analysis","repoOwnerIsOrg":false,"currentUserCanAdminRepo":false},"displayName":"_print_caps_hexa_l_h.c","displayUrl":"https://github.com/paschalugwu/test_printf/blob/main/_print_caps_hexa_l_h.c?raw=true","headerInfo":{"blobSize":"1.95 KB","deleteInfo":{"deleteTooltip":"You must be signed in to make or propose changes"},"editInfo":{"editTooltip":"You must be signed in to make or propose changes"},"ghDesktopPath":"https://desktop.github.com","gitLfsPath":null,"onBranch":true,"shortPath":"dc95720","siteNavLoginPath":"/login?return_to=https%3A%2F%2Fgithub.com%2Fpaschalugwu%2Ftest_printf%2Fblob%2Fmain%2F_print_caps_hexa_l_h.c","isCSV":false,"isRichtext":false,"toc":null,"lineInfo":{"truncatedLoc":"119","truncatedSloc":"99"},"mode":"file"},"image":false,"isCodeownersFile":null,"isPlain":false,"isValidLegacyIssueTemplate":false,"issueTemplateHelpUrl":"https://docs.github.com/articles/about-issue-and-pull-request-templates","issueTemplate":null,"discussionTemplate":null,"language":"C","languageID":41,"large":false,"loggedIn":false,"newDiscussionPath":"/paschalugwu/test_printf/discussions/new","newIssuePath":"/paschalugwu/test_printf/issues/new","planSupportInfo":{"repoIsFork":null,"repoOwnedByCurrentUser":null,"requestFullPath":"/paschalugwu/test_printf/blob/main/_print_caps_hexa_l_h.c","showFreeOrgGatedFeatureMessage":null,"showPlanSupportBanner":null,"upgradeDataAttributes":null,"upgradePath":null},"publishBannersInfo":{"dismissActionNoticePath":"/settings/dismiss-notice/publish_action_from_dockerfile","dismissStackNoticePath":"/settings/dismiss-notice/publish_stack_from_file","releasePath":"/paschalugwu/test_printf/releases/new?marketplace=true","showPublishActionBanner":false,"showPublishStackBanner":false},"renderImageOrRaw":false,"richText":null,"renderedFileInfo":null,"shortPath":null,"tabSize":8,"topBannersInfo":{"overridingGlobalFundingFile":false,"globalPreferredFundingPath":null,"repoOwner":"paschalugwu","repoName":"test_printf","showInvalidCitationWarning":false,"citationHelpUrl":"https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-on-github/about-citation-files","showDependabotConfigurationBanner":false,"actionsOnboardingTip":null},"truncated":false,"viewable":true,"workflowRedirectUrl":null,"symbols":{"timedOut":true,"notAnalyzed":false,"symbols":[{"name":"_print_caps_hexadecimal_long","kind":"function","identStart":266,"identEnd":294,"extentStart":266,"extentEnd":308,"fullyQualifiedName":"_print_caps_hexadecimal_long","identUtf16":{"start":{"lineNumber":10,"utf16Col":4},"end":{"lineNumber":10,"utf16Col":32}},"extentUtf16":{"start":{"lineNumber":10,"utf16Col":4},"end":{"lineNumber":10,"utf16Col":46}}},{"name":"_print_caps_hexadecimal_recursive_long","kind":"function","identStart":663,"identEnd":701,"extentStart":663,"extentEnd":720,"fullyQualifiedName":"_print_caps_hexadecimal_recursive_long","identUtf16":{"start":{"lineNumber":34,"utf16Col":4},"end":{"lineNumber":34,"utf16Col":42}},"extentUtf16":{"start":{"lineNumber":34,"utf16Col":4},"end":{"lineNumber":34,"utf16Col":61}}},{"name":"_print_caps_hexadecimal_short","kind":"function","identStart":1222,"identEnd":1251,"extentStart":1222,"extentEnd":1265,"fullyQualifiedName":"_print_caps_hexadecimal_short","identUtf16":{"start":{"lineNumber":68,"utf16Col":4},"end":{"lineNumber":68,"utf16Col":33}},"extentUtf16":{"start":{"lineNumber":68,"utf16Col":4},"end":{"lineNumber":68,"utf16Col":47}}},{"name":"_print_caps_hexadecimal_recursive_short","kind":"function","identStart":1638,"identEnd":1677,"extentStart":1638,"extentEnd":1697,"fullyQualifiedName":"_print_caps_hexadecimal_recursive_short","identUtf16":{"start":{"lineNumber":92,"utf16Col":4},"end":{"lineNumber":92,"utf16Col":43}},"extentUtf16":{"start":{"lineNumber":92,"utf16Col":4},"end":{"lineNumber":92,"utf16Col":63}}}]}},"copilotInfo":null,"csrf_tokens":{"/paschalugwu/test_printf/branches":{"post":"QUACVocEuWAbTAmzCUdX-L2wlMZTCEA3nwgBr7oD2Vg-YOY_mXCdDtUi3MWrP6loQHldJoWVs5Qf2UmYmQohJg"},"/repos/preferences":{"post":"9qtGlc9ZuCICzuIAAdXIReXbJVoMe2w7Jh3GvpxlIyN-BjIPj2Y73WTqBBr7lYRwg2LRmfUUkl2igKW4jPaXmg"}}},"title":"test_printf/_print_caps_hexa_l_h.c at main · paschalugwu/test_printf"}
+#include <stdarg.h>
+#include <stdio.h>
+#include "main.h"
+
+/**
+ * _print_caps_hexadecimal_long - Prints a long hexadecimal number in uppercase
+ * @args: Arguments list containing the long hexadecimal number to print
+ *
+ * Return: Number of characters printed
+ */
+int _print_caps_hexadecimal_long(va_list args)
+{
+	unsigned long num = va_arg(args, unsigned long);
+	int count = 0;
+
+	if (num == 0)
+	{
+		_putchar('0');
+		count++;
+	}
+	else
+	{
+		count += _print_caps_hexadecimal_recursive_long(num);
+	}
+
+	return (count);
+}
+
+/**
+ * _print_caps_hexadecimal_recursive_long - Recursive function
+ * @num: The number to print
+ *
+ * Return: Number of characters printed
+ */
+int _print_caps_hexadecimal_recursive_long(unsigned long num)
+{
+	int count = 0;
+	int remainder;
+
+	if (num == 0)
+	{
+		return (count);
+	}
+
+	count += _print_caps_hexadecimal_recursive_long(num / 16);
+
+	remainder = num % 16;
+
+	if (remainder < 10)
+	{
+		_putchar(remainder + '0');
+	}
+	else
+	{
+		_putchar(remainder - 10 + 'A');
+	}
+
+	count++;
+
+	return (count);
+}
+
+/**
+ * _print_caps_hexadecimal_short - Prints a short hexadecimal number in upper
+ * @args: Arguments list containing the short hexadecimal number to print
+ *
+ * Return: Number of characters printed
+ */
+int _print_caps_hexadecimal_short(va_list args)
+{
+	unsigned short num = (unsigned short)va_arg(args, unsigned int);
+	int count = 0;
+
+	if (num == 0)
+	{
+		_putchar('0');
+		count++;
+	}
+	else
+	{
+		count += _print_caps_hexadecimal_recursive_short(num);
+	}
+
+	return (count);
+}
+
+/**
+ * _print_caps_hexadecimal_recursive_short - Recursive function
+ * @num: The number to print
+ *
+ * Return: Number of characters printed
+ */
+int _print_caps_hexadecimal_recursive_short(unsigned short num)
+{
+	int count = 0;
+	int remainder;
+
+	if (num == 0)
+	{
+		return (count);
+	}
+
+	count += _print_caps_hexadecimal_recursive_short(num / 16);
+
+	remainder = num % 16;
+
+	if (remainder < 10)
+	{
+		_putchar(remainder + '0');
+	}
+	else
+	{
+		_putchar(remainder - 10 + 'A');
+	}
+
+	count++;
+
+	return (count);
+}

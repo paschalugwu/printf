@@ -2,14 +2,14 @@
 #include <stdio.h>
 
 /**
- * _print_octal_long - Prints an unsigned long integer in octal format
- * @n: The unsigned long integer to be printed
+ * _print_unsigned_short - Prints an unsigned short integer
+ * @n: The unsigned short integer to be printed
  *
  * Return: The number of characters printed
  */
-int _print_octal_long(unsigned long n)
+int _print_unsigned_short(unsigned short n)
 {
-	char buffer[22];
+	char buffer[10];
 	int count = 0;
 	int i = 0;
 
@@ -21,8 +21,8 @@ int _print_octal_long(unsigned long n)
 
 	while (n != 0)
 	{
-		buffer[i] = (n % 8) + '0';
-		n /= 8;
+		buffer[i] = (n % 10) + '0';
+		n /= 10;
 		i++;
 	}
 
